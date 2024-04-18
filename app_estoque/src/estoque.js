@@ -25,9 +25,22 @@ function removerProdutos(id){
 
 }
 
+function editarProduto(id, qtd){
+    let pRetorno;
+    produtos.forEach(p => {
+        if(p.id == id){
+            p.qtd = qtd;
+            pRetorno = p;
+        }
+    });
+    
+    return pRetorno;
+}
+
 module.exports = {
     criarProduto,
     adicionarProduto,
     listarProdutos,
-    removerProdutos
+    removerProdutos,
+    editarProduto
 }

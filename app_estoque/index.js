@@ -24,6 +24,12 @@ app.get('/remover/:id', function (req, res) {
     res.send(id);
 })
 
+app.get('/editar/:id/:qtd', function (req, res){
+    let id = req.params.id;
+    let qtd = req.params.qtd;
+
+    res.send(estoque.editarProduto(id,qtd));
+})
 app.listen(PORT, function(){
 console.log('app rodando na porta ' + PORT);
 
